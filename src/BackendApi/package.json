@@ -1,0 +1,25 @@
+{
+  "name": "carservices",
+  "version": "1.0.0",
+  "description": "Control Car Services Center",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Car",
+    "Car",
+    "Services"
+  ],
+  "author": "Fernando Rocha e Leonardo Rocha",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "knex": "^0.21.0",
+    "sqlite3": "^4.1.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.3"
+  }
+}
