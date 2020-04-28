@@ -9,6 +9,12 @@ module.exports = {
         return response.json(manufactures);
         
 
+    },
+
+    async create(request, response) {
+        const { name } = request.body;
+        const id = await connection('Manufactures').insert({name});
+        response.json({ id });
     }
 
 }
