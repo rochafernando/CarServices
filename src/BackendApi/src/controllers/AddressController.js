@@ -9,9 +9,10 @@ module.exports  =   {
         return response.json(address);
     },
 
-    async create(request, response) {
+  async create(request, response) {
         const { name,CEP,TypesId,CitiesId} = request.body;
-        const address = await connection('Address').insert({name,CEP,TypesId,CitiesId});
+        // Trazer todas a informações do ConsultarCEP para aqui
+        //const address = await connection('Address').insert({name,CEP,TypesId,CitiesId});
         response.json({ address });
     },
     async update(request , response){
