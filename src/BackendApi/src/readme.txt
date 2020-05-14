@@ -7,4 +7,8 @@ npx knex migrate:rollback <--
 
 
 Para criar as seeds executamos o seguinte comando
-knex seed:make seed_name
+npx knex seed:make seed_name
+npx knex seed:run 
+
+
+para testar utilize o comando npm test

@@ -1,17 +1,25 @@
 const express = require('express');
 
-const { celebrate, Segments, Joi} = require('celebrate');
+const { celebrate, Segments} = require('celebrate');
 
 const ManufactureController = require('./controllers/ManufacturerController');
-const namedValid = require('./Validations/ManufactureValidation');
+const ManufactureValidation  = require('./Validations/ManufactureValidation');
 
 const routes = express.Router();
 
 
-routes.get('/manufacturer', ManufactureController.index);
+routes.get('/manufacturer', ManufactureController.getAll);
 routes.post('/manufacturer', celebrate({
-    [Segments.BODY] : namedValid 
+    [Segments.BODY] : ManufactureValidation.nameValid 
    
 }) , ManufactureController.create);
+
+
+routes.put('/manufacturer/{id}', celebrate({
+    [Segments.PARAMS] : ManufactureValidation.identification,
+    [Segments.BODY] : ManufactureValidation.nameValid 
+   
+}) , ManufactureController.update);
+
 
 module.exports = routes;

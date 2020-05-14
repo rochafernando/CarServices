@@ -20,8 +20,16 @@ describe('Manufacturer', () => {
         const response = await request(app)
                                 .get('/manufacturer')
                                 .send();
-        console.log(response.body);
+        
         expect(response.body).toHaveLength(5);
     });
+
+    // it('manufacturer name should be unique ', async () => {
+
+    //     const data = {name : "Ford"};
+    //     const response = await request(app)
+    //                         .post('/manufacturer')
+    //                         .send(data).expect(400);
+    // });
 
 });

@@ -1,10 +1,15 @@
-const { Joi} = require('celebrate');
+const { Joi } = require('celebrate');
 
 
-const nameValid = Joi.object().keys({
+module.exports = {
+    nameValid : () => Joi.object().keys({
         name : Joi.string().trim().required().min(3).max(50)
-    }); 
+    }),
+
+    identification : function(){ return Joi.object().keys({
+        id : Joi.number().required()
+    })}
+}
 
 
 
-module.exports = nameValid;
